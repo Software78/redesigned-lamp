@@ -6,16 +6,22 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: REdgeInsets.symmetric(
-            horizontal: 16.r,
-            vertical: 17.r,
+      body: Stack(
+        children: [
+          Positioned(
+            top: 61.h,
+            left: 16.w,
+            right: 16.w,
+            child: Container(
+              width: double.infinity,
+              height: 118.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.r),
+                color: Color(0xff54565B),
+              ),
+            ),
           ),
-          child: Column(
-            children: [Stack()],
-          ),
-        ),
+        ],
       ),
     );
   }
