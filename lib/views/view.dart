@@ -42,8 +42,9 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
                 color: Color(0xffE1261C),
                 border: Border.all(color: Colors.white, width: 2.w),
                 borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20.r),
-                    bottomRight: Radius.circular(20.r)),
+                  bottomLeft: Radius.circular(20.r),
+                  bottomRight: Radius.circular(20.r),
+                ),
               ),
             ),
           )
