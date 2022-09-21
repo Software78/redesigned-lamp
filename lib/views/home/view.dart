@@ -46,6 +46,15 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
                   bottomRight: Radius.circular(20.r),
                 ),
               ),
+              child: Center(
+                child: CustomText(
+                  text: 'You have 6 open deliveries',
+                  color: Colors.white,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12.sp,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
             ),
           ),
           Positioned(
@@ -100,10 +109,10 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
             child: Container(
               height: 56.h,
               decoration: BoxDecoration(
-                color: Color(0xffF2F2F2),
+                color: const Color(0xffF2F2F2),
                 borderRadius: BorderRadius.circular(8.r),
                 border: Border.all(
-                  color: Color(0xffDEDDDC),
+                  color: const Color(0xffDEDDDC),
                 ),
               ),
             ),
@@ -113,12 +122,12 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
             left: 31.w,
             right: 49.w,
             child: TextField(
-              cursorColor: Color(0xffDEDDDC),
+              cursorColor: const Color(0xffDEDDDC),
               decoration: InputDecoration.collapsed(
                 hintStyle: GoogleFonts.mulish(
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w400,
-                  color: Color(0xff8B908B),
+                  color: const Color(0xff8B908B),
                 ),
                 hintText: 'Search truck number, commodity...',
               ),
@@ -130,12 +139,9 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
             child: SvgPicture.asset(
               'assets/icons/search.svg',
             ),
-          )
+          ),
         ],
       ),
     );
   }
 }
-
-
-

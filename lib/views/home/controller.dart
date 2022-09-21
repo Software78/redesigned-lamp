@@ -6,7 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:third_iteration/widgets/custom_text.dart';
 
-import '../mvc/mvc.dart';
+import '../../mvc/mvc.dart';
+
 
 
 
