@@ -13,7 +13,7 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
             left: 16.w,
             right: 16.w,
             child: Container(
-              width: double.infinity,
+              width: 342.w,
               height: 118.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.r),
@@ -21,7 +21,26 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
               ),
             ),
           ),
-          Positioned(child: )
+          Positioned(
+            top: 61.h,
+            left: 16.w,
+            right: 16.w,
+            child: SvgPicture.asset(
+              'assets/illustrations/container_bg.svg',
+              width: 342.w,
+              height: 118.h,
+            ),
+          ),
+          Positioned(
+            top: 158.h,
+            right: 16.w,
+            left: 16.w,
+            child: Container(decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(radius)
+              )
+            )),
+          )
         ],
       ),
     );
