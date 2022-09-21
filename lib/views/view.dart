@@ -21,6 +21,7 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
               ),
             ),
           ),
+          Positioned(child: )
         ],
       ),
     );
