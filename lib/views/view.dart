@@ -47,6 +47,37 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
                 ),
               ),
             ),
+          ),
+          Positioned(
+            top: 77.h,
+            left: 32.w,
+            child: Row(
+              children: [
+                Container(
+                  width: 45.w,
+                  height: 45.w,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.r),
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 2.w,
+                    ),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6.r),
+                    child: Image.asset('assets/images/adamu.jpeg'),
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                Column(
+                  children: [
+                    CustomText(text: "Welcome Back!"),
+                    SizedBox(height: 2.h),
+                    CustomText(text: "Adamu Adamu"),
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),
