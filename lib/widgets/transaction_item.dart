@@ -133,7 +133,28 @@ class TransactionItem extends StatelessWidget {
           ),
           child: Row(
             children: [
-              const CustomText(text: ''),
+              CustomText(
+                text: 'Tue 12 Jan, 2021',
+                fontSize: 8.sp,
+                fontWeight: FontWeight.w400,
+                color: const Color(0xff8B908B),
+              ),
+              const SizedBox(width: 1),
+              Container(
+                width: 2.w,
+                height: 2.w,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100.r),
+                  color: Colors.red,
+                ),
+              ),
+              const SizedBox(width: 1),
+              CustomText(
+                text: '10:00 AM',
+                fontSize: 8.sp,
+                fontWeight: FontWeight.w400,
+                color: const Color(0xff8B908B),
+              ),
               const Spacer(),
               CustomText(
                 text: 'ID:',
