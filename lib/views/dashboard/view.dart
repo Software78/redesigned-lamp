@@ -108,7 +108,10 @@ class DashboardView
                   Positioned(
                     top: 28.h,
                     right: 28.w,
-                    child: SvgPicture.asset('assets/icons/notification.svg'),
+                    child: GestureDetector(
+                        onTap: () => controller.navigateToNotification(),
+                        child:
+                            SvgPicture.asset('assets/icons/notification.svg')),
                   ),
                   Positioned(
                     top: 165.h,

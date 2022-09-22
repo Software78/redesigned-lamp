@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:third_iteration/views/dashboard_delivery/controller.dart';
+import 'package:third_iteration/views/notifications/controller.dart';
 import 'package:third_iteration/widgets/custom_text.dart';
 
 import '../../models/transaction_model.dart';
@@ -112,9 +113,20 @@ class DashboardController extends State<DashboardScreen> {
 
   navigateToDelivery() {
     Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => const DashboardDeliveryScreen()));
+      context,
+      MaterialPageRoute(
+        builder: (context) => const DashboardDeliveryScreen(),
+      ),
+    );
+  }
+
+  navigateToNotification() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const NotificationsScreen(),
+      ),
+    );
   }
 
   @override
