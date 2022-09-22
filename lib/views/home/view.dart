@@ -385,7 +385,7 @@ class CommodityCodes extends StatelessWidget {
             backgroundColor: Colors.white,
             child: SvgPicture.asset('assets/icons/close.svg'),
           ),
-        )
+        ),
       ],
     );
   }
