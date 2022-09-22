@@ -1,9 +1,99 @@
-// ignore_for_file: constant_identifier_names
+// ignore_for_file: constant_identifier_names, prefer_const_constructors
 
 part of 'controller.dart';
 
 class HomeView extends StatelessView<HomeScreen, HomeController> {
-  const HomeView(HomeController state, {Key? key}) : super(state, key: key);
+  HomeView(HomeController state, {Key? key}) : super(state, key: key);
+
+  final List<Transaction> transaction = [
+    Transaction(
+      truckNumber: "KAN - 345SY",
+      product: Product.COCOA,
+      amount: 33.4,
+      buyer: "AFTL_Saminaka",
+      dateTime: DateTime(2020),
+      seller: "Animal Care",
+      transactionId: "OTC-363-22573378487015320",
+    ),
+    Transaction(
+      truckNumber: "KAN - 345SY",
+      amount: 33.4,
+      product: Product.GOLD,
+      buyer: "AFTL_Saminaka",
+      dateTime: DateTime(2020),
+      seller: "Animal Care",
+      transactionId: "OTC-363-22573378487015320",
+      isAfexDelivery: true,
+    ),
+    Transaction(
+      truckNumber: "KAN - 345SY",
+      amount: 33.4,
+      product: Product.MAZ,
+      buyer: "AFTL_Saminaka",
+      dateTime: DateTime(2020),
+      seller: "Animal Care",
+      transactionId: "OTC-363-22573378487015320",
+      isAfexDelivery: true,
+    ),
+    Transaction(
+      truckNumber: "KAN - 345SY",
+      product: Product.COCOA,
+      amount: 33.4,
+      buyer: "AFTL_Saminaka",
+      dateTime: DateTime(2020),
+      seller: "Animal Care",
+      transactionId: "OTC-363-22573378487015320",
+    ),
+    Transaction(
+      truckNumber: "KAN - 345SY",
+      amount: 33.4,
+      product: Product.GOLD,
+      buyer: "AFTL_Saminaka",
+      dateTime: DateTime(2020),
+      seller: "Animal Care",
+      transactionId: "OTC-363-22573378487015320",
+      isAfexDelivery: true,
+    ),
+    Transaction(
+      truckNumber: "KAN - 345SY",
+      amount: 33.4,
+      product: Product.MAZ,
+      buyer: "AFTL_Saminaka",
+      dateTime: DateTime(2020),
+      seller: "Animal Care",
+      transactionId: "OTC-363-22573378487015320",
+      isAfexDelivery: true,
+    ),
+    Transaction(
+      truckNumber: "KAN - 345SY",
+      product: Product.COCOA,
+      amount: 33.4,
+      buyer: "AFTL_Saminaka",
+      dateTime: DateTime(2020),
+      seller: "Animal Care",
+      transactionId: "OTC-363-22573378487015320",
+    ),
+    Transaction(
+      truckNumber: "KAN - 345SY",
+      amount: 33.4,
+      product: Product.GOLD,
+      buyer: "AFTL_Saminaka",
+      dateTime: DateTime(2020),
+      seller: "Animal Care",
+      transactionId: "OTC-363-22573378487015320",
+      isAfexDelivery: true,
+    ),
+    Transaction(
+      truckNumber: "KAN - 345SY",
+      amount: 33.4,
+      product: Product.MAZ,
+      buyer: "AFTL_Saminaka",
+      dateTime: DateTime(2020),
+      seller: "Animal Care",
+      transactionId: "OTC-363-22573378487015320",
+      isAfexDelivery: true,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -170,246 +260,133 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => showModalBottomSheet(
+          context: context,
+          builder: (context) => CommodityCodes(),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20.r),
+              topLeft: Radius.circular(20.r),
+            ),
+          ),
+        ),
+        backgroundColor: Color(0xffE1261C),
+        child: SvgPicture.asset('assets/icons/info-circle.svg'),
+      ),
     );
   }
 }
 
-class TransactionItem extends StatelessWidget {
-  const TransactionItem({
-    super.key,
-    required this.transaction,
-  });
-
-  final Transaction transaction;
+class CommodityCodes extends StatelessWidget {
+  const CommodityCodes({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
+      clipBehavior: Clip.none,
       children: [
         Container(
-          height: 107.h,
-          width: 341.w,
-          padding: REdgeInsets.symmetric(
-            horizontal: 16.w,
-            vertical: 10.h,
-          ),
-          decoration: BoxDecoration(
-            color: const Color(0xfffcfcfc),
-            border: Border.all(color: const Color(0xffe8e8e8)),
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(8.r),
-              topRight: Radius.circular(8.r),
-            ),
-          ),
-          child: Row(
+          height: 215.h,
+          padding: REdgeInsets.all(16.r),
+          width: double.infinity,
+          decoration: BoxDecoration(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              CustomText(
+                text: 'Commodity Codes',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500,
+                color: Color(0xff54565B),
+              ),
+              SizedBox(height: 13.h),
+              Divider(),
+              SizedBox(height: 13.h),
+              Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    height: 21.h,
-                    padding:
-                        REdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                    decoration: BoxDecoration(
-                      color: Color(0xfff2f2f2),
-                      borderRadius: BorderRadius.circular(4.r),
-                    ),
-                    child: CustomText(
-                      text:
-                          '${transaction.amount} MT of ${transaction.product.name}',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w600,
-                      color: transaction.isAfexDelivery
-                          ? Color(0xffE1261C)
-                          : Color(0xff0089C8),
-                    ),
+                    width: 6.w,
+                    height: 6.w,
+                    color: Color(0xffC81107),
                   ),
-                  SizedBox(height: 5.h),
+                  SizedBox(width: 13.11.w),
                   CustomText(
-                    text: transaction.truckNumber,
-                    fontSize: 24.sp,
+                    text: 'MAZ - Maize',
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.w700,
-                    color: const Color(0xff54565B),
+                    color: Color(0xff8B908B),
                   ),
-                  SizedBox(height: 5.h),
-                  Row(
-                    children: [
-                      SvgPicture.asset('assets/icons/seller.svg'),
-                      SizedBox(width: 4.w),
-                      CustomText(
-                        text: transaction.buyer,
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff7C827D),
-                      ),
-                      SizedBox(width: 7.w),
-                      SvgPicture.asset(
-                        'assets/icons/arrow_forward.svg',
-                        color: transaction.isAfexDelivery
-                            ? Color(0xffE1261C)
-                            : null,
-                      ),
-                      SizedBox(width: 7.w),
-                      SvgPicture.asset('assets/icons/seller.svg'),
-                      SizedBox(width: 7.w),
-                      CustomText(
-                        text: transaction.seller,
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff7C827D),
-                      ),
-                    ],
-                  )
+                ],
+              ),
+              SizedBox(height: 13.h),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    width: 6.w,
+                    height: 6.w,
+                    color: Color(0xffC81107),
+                  ),
+                  SizedBox(width: 13.11.w),
+                  CustomText(
+                    text: 'SSC - Sesame Cleaned Seed',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xff8B908B),
+                  ),
+                ],
+              ),
+              SizedBox(height: 13.h),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    width: 6.w,
+                    height: 6.w,
+                    color: Color(0xffC81107),
+                  ),
+                  SizedBox(width: 13.11.w),
+                  CustomText(
+                    text: 'SG - Sorghum',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xff8B908B),
+                  ),
+                ],
+              ),
+              SizedBox(height: 13.h),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    width: 6.w,
+                    height: 6.w,
+                    color: Color(0xffC81107),
+                  ),
+                  SizedBox(width: 13.11.w),
+                  CustomText(
+                    text: 'SB - Soybean',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xff8B908B),
+                  ),
                 ],
               ),
             ],
           ),
         ),
-        Container(
-          height: 15.h,
-          width: 341.w,
-          padding: REdgeInsets.symmetric(horizontal: 15.r),
-          decoration: BoxDecoration(
-            color: const Color(0xffe8e8e8),
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(8.r),
-              bottomRight: Radius.circular(8.r),
-            ),
+        Positioned(
+          bottom: 231.h,
+          right: 10.w,
+          child: CircleAvatar(
+            radius: 20.r,
+            backgroundColor: Colors.white,
+            child: SvgPicture.asset('assets/icons/close.svg'),
           ),
-          child: Row(
-            children: [
-              CustomText(text: ''),
-              Spacer(),
-              CustomText(
-                text: 'ID:',
-                fontSize: 8.sp,
-                fontWeight: FontWeight.w400,
-                color: Color(0xff979797),
-              ),
-              CustomText(
-                text: transaction.transactionId,
-                color: Color(0xff47494E),
-                fontSize: 8.sp,
-                fontWeight: FontWeight.w600,
-              )
-            ],
-          ),
-        ),
+        )
       ],
     );
   }
 }
-
-enum Product { SSG, MAZ, COCOA, GOLD }
-
-class Transaction {
-  final Product product;
-  final String truckNumber;
-  final double amount;
-  final String seller;
-  final String buyer;
-  final String transactionId;
-  final DateTime dateTime;
-  bool isAfexDelivery;
-
-  Transaction({
-    required this.product,
-    required this.truckNumber,
-    required this.amount,
-    required this.buyer,
-    required this.dateTime,
-    this.isAfexDelivery = false,
-    required this.seller,
-    required this.transactionId,
-  });
-}
-
-List<Transaction> transaction = [
-  Transaction(
-    truckNumber: "KAN - 345SY",
-    product: Product.COCOA,
-    amount: 33.4,
-    buyer: "AFTL_Saminaka",
-    dateTime: DateTime(2020),
-    seller: "Animal Care",
-    transactionId: "OTC-363-22573378487015320",
-  ),
-  Transaction(
-    truckNumber: "KAN - 345SY",
-    amount: 33.4,
-    product: Product.GOLD,
-    buyer: "AFTL_Saminaka",
-    dateTime: DateTime(2020),
-    seller: "Animal Care",
-    transactionId: "OTC-363-22573378487015320",
-    isAfexDelivery: true,
-  ),
-  Transaction(
-    truckNumber: "KAN - 345SY",
-    amount: 33.4,
-    product: Product.MAZ,
-    buyer: "AFTL_Saminaka",
-    dateTime: DateTime(2020),
-    seller: "Animal Care",
-    transactionId: "OTC-363-22573378487015320",
-    isAfexDelivery: true,
-  ),
-  Transaction(
-    truckNumber: "KAN - 345SY",
-    product: Product.COCOA,
-    amount: 33.4,
-    buyer: "AFTL_Saminaka",
-    dateTime: DateTime(2020),
-    seller: "Animal Care",
-    transactionId: "OTC-363-22573378487015320",
-  ),
-  Transaction(
-    truckNumber: "KAN - 345SY",
-    amount: 33.4,
-    product: Product.GOLD,
-    buyer: "AFTL_Saminaka",
-    dateTime: DateTime(2020),
-    seller: "Animal Care",
-    transactionId: "OTC-363-22573378487015320",
-    isAfexDelivery: true,
-  ),
-  Transaction(
-    truckNumber: "KAN - 345SY",
-    amount: 33.4,
-    product: Product.MAZ,
-    buyer: "AFTL_Saminaka",
-    dateTime: DateTime(2020),
-    seller: "Animal Care",
-    transactionId: "OTC-363-22573378487015320",
-    isAfexDelivery: true,
-  ),
-  Transaction(
-    truckNumber: "KAN - 345SY",
-    product: Product.COCOA,
-    amount: 33.4,
-    buyer: "AFTL_Saminaka",
-    dateTime: DateTime(2020),
-    seller: "Animal Care",
-    transactionId: "OTC-363-22573378487015320",
-  ),
-  Transaction(
-    truckNumber: "KAN - 345SY",
-    amount: 33.4,
-    product: Product.GOLD,
-    buyer: "AFTL_Saminaka",
-    dateTime: DateTime(2020),
-    seller: "Animal Care",
-    transactionId: "OTC-363-22573378487015320",
-    isAfexDelivery: true,
-  ),
-  Transaction(
-    truckNumber: "KAN - 345SY",
-    amount: 33.4,
-    product: Product.MAZ,
-    buyer: "AFTL_Saminaka",
-    dateTime: DateTime(2020),
-    seller: "Animal Care",
-    transactionId: "OTC-363-22573378487015320",
-    isAfexDelivery: true,
-  ),
-];
