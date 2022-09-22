@@ -1,10 +1,11 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:third_iteration/widgets/custom_text.dart';
 
 import '../../mvc/mvc.dart';
+import '../../widgets/custom_form_field.dart';
 
 part 'view.dart';
 
@@ -17,28 +18,52 @@ class DashboardDeliveryScreen extends StatefulWidget {
 
 class DashboardDeliveryController extends State<DashboardDeliveryScreen>
     with SingleTickerProviderStateMixin {
-  late AnimationController controller;
+  late AnimationController animationController;
   late Animation sizeAnimation;
+
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  late TextEditingController volumeController;
+  late TextEditingController bagController;
+  late TextEditingController commentController;
 
   @override
   void initState() {
-    controller = AnimationController(
+    animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
     );
-    sizeAnimation = Tween<double>(begin: 118.h, end: 238.h).animate(controller);
-    super.initState();
-    controller.addListener(() {
+    sizeAnimation =
+        Tween<double>(begin: 118.h, end: 238.h).animate(animationController);
+    animationController.addListener(() {
       setState(() {});
     });
+    volumeController = TextEditingController();
+    bagController = TextEditingController();
+    commentController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    volumeController.dispose();
+    bagController.dispose();
+    commentController.dispose();
+    super.dispose();
   }
 
   playContainerAnimation() {
-    controller.value == 0.0 ? controller.forward() : controller.reverse();
+    animationController.value == 0.0
+        ? animationController.forward()
+        : animationController.reverse();
   }
 
   returnToPreviousScreen() {
     Navigator.pop(context);
+  }
+
+  submit() {
+    if (formKey.currentState!.validate()) {}
   }
 
   @override

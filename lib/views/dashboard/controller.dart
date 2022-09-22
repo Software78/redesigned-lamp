@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:third_iteration/views/dashboard_delivery/controller.dart';
 import 'package:third_iteration/views/notifications/controller.dart';
-import 'package:third_iteration/widgets/custom_text.dart';
 
 import '../../models/transaction_model.dart';
 import '../../mvc/mvc.dart';
 import '../../widgets/dashboard_modal.dart';
-import '../../widgets/transaction_item.dart';
 
 part 'view.dart';
 
@@ -21,6 +19,13 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class DashboardController extends State<DashboardScreen> {
+  final advancedDrawerController = AdvancedDrawerController();
+
+  openDrawer() {
+    advancedDrawerController.showDrawer();
+    print(advancedDrawerController.value.visible);
+  }
+
   final List<Transaction> transaction = [
     Transaction(
       truckNumber: "KAN - 345SY",
@@ -111,6 +116,16 @@ class DashboardController extends State<DashboardScreen> {
     ),
   ];
 
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   navigateToDelivery() {
     Navigator.push(
       context,
@@ -121,6 +136,7 @@ class DashboardController extends State<DashboardScreen> {
   }
 
   navigateToNotification() {
+    print('object');
     Navigator.push(
       context,
       MaterialPageRoute(
