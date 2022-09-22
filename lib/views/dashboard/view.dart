@@ -2,98 +2,10 @@
 
 part of 'controller.dart';
 
-class HomeView extends StatelessView<HomeScreen, HomeController> {
-  HomeView(HomeController state, {Key? key}) : super(state, key: key);
-
-  final List<Transaction> transaction = [
-    Transaction(
-      truckNumber: "KAN - 345SY",
-      product: Product.COCOA,
-      amount: 33.4,
-      buyer: "AFTL_Saminaka",
-      dateTime: DateTime(2020),
-      seller: "Animal Care",
-      transactionId: "OTC-363-22573378487015320",
-    ),
-    Transaction(
-      truckNumber: "KAN - 345SY",
-      amount: 33.4,
-      product: Product.GOLD,
-      buyer: "AFTL_Saminaka",
-      dateTime: DateTime(2020),
-      seller: "Animal Care",
-      transactionId: "OTC-363-22573378487015320",
-      isAfexDelivery: true,
-    ),
-    Transaction(
-      truckNumber: "KAN - 345SY",
-      amount: 33.4,
-      product: Product.MAZ,
-      buyer: "AFTL_Saminaka",
-      dateTime: DateTime(2020),
-      seller: "Animal Care",
-      transactionId: "OTC-363-22573378487015320",
-      isAfexDelivery: true,
-    ),
-    Transaction(
-      truckNumber: "KAN - 345SY",
-      product: Product.COCOA,
-      amount: 33.4,
-      buyer: "AFTL_Saminaka",
-      dateTime: DateTime(2020),
-      seller: "Animal Care",
-      transactionId: "OTC-363-22573378487015320",
-    ),
-    Transaction(
-      truckNumber: "KAN - 345SY",
-      amount: 33.4,
-      product: Product.GOLD,
-      buyer: "AFTL_Saminaka",
-      dateTime: DateTime(2020),
-      seller: "Animal Care",
-      transactionId: "OTC-363-22573378487015320",
-      isAfexDelivery: true,
-    ),
-    Transaction(
-      truckNumber: "KAN - 345SY",
-      amount: 33.4,
-      product: Product.MAZ,
-      buyer: "AFTL_Saminaka",
-      dateTime: DateTime(2020),
-      seller: "Animal Care",
-      transactionId: "OTC-363-22573378487015320",
-      isAfexDelivery: true,
-    ),
-    Transaction(
-      truckNumber: "KAN - 345SY",
-      product: Product.COCOA,
-      amount: 33.4,
-      buyer: "AFTL_Saminaka",
-      dateTime: DateTime(2020),
-      seller: "Animal Care",
-      transactionId: "OTC-363-22573378487015320",
-    ),
-    Transaction(
-      truckNumber: "KAN - 345SY",
-      amount: 33.4,
-      product: Product.GOLD,
-      buyer: "AFTL_Saminaka",
-      dateTime: DateTime(2020),
-      seller: "Animal Care",
-      transactionId: "OTC-363-22573378487015320",
-      isAfexDelivery: true,
-    ),
-    Transaction(
-      truckNumber: "KAN - 345SY",
-      amount: 33.4,
-      product: Product.MAZ,
-      buyer: "AFTL_Saminaka",
-      dateTime: DateTime(2020),
-      seller: "Animal Care",
-      transactionId: "OTC-363-22573378487015320",
-      isAfexDelivery: true,
-    ),
-  ];
+class DashboardView
+    extends StatelessView<DashboardScreen, DashboardController> {
+  const DashboardView(DashboardController state, {Key? key})
+      : super(state, key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -248,9 +160,9 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
                         separatorBuilder: (context, index) =>
                             SizedBox(height: 24.h),
                         itemBuilder: (context, index) => TransactionItem(
-                          transaction: transaction[index],
+                          transaction: controller.transaction[index],
                         ),
-                        itemCount: transaction.length,
+                        itemCount: controller.transaction.length,
                       ),
                     ),
                   )
@@ -274,119 +186,6 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
         backgroundColor: Color(0xffE1261C),
         child: SvgPicture.asset('assets/icons/info-circle.svg'),
       ),
-    );
-  }
-}
-
-class CommodityCodes extends StatelessWidget {
-  const CommodityCodes({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        Container(
-          height: 215.h,
-          padding: REdgeInsets.all(16.r),
-          width: double.infinity,
-          decoration: BoxDecoration(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomText(
-                text: 'Commodity Codes',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w500,
-                color: Color(0xff54565B),
-              ),
-              SizedBox(height: 13.h),
-              Divider(),
-              SizedBox(height: 13.h),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: 6.w,
-                    height: 6.w,
-                    color: Color(0xffC81107),
-                  ),
-                  SizedBox(width: 13.11.w),
-                  CustomText(
-                    text: 'MAZ - Maize',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff8B908B),
-                  ),
-                ],
-              ),
-              SizedBox(height: 13.h),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: 6.w,
-                    height: 6.w,
-                    color: Color(0xffC81107),
-                  ),
-                  SizedBox(width: 13.11.w),
-                  CustomText(
-                    text: 'SSC - Sesame Cleaned Seed',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff8B908B),
-                  ),
-                ],
-              ),
-              SizedBox(height: 13.h),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: 6.w,
-                    height: 6.w,
-                    color: Color(0xffC81107),
-                  ),
-                  SizedBox(width: 13.11.w),
-                  CustomText(
-                    text: 'SG - Sorghum',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff8B908B),
-                  ),
-                ],
-              ),
-              SizedBox(height: 13.h),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: 6.w,
-                    height: 6.w,
-                    color: Color(0xffC81107),
-                  ),
-                  SizedBox(width: 13.11.w),
-                  CustomText(
-                    text: 'SB - Soybean',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff8B908B),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-        Positioned(
-          bottom: 231.h,
-          right: 10.w,
-          child: CircleAvatar(
-            radius: 20.r,
-            backgroundColor: Colors.white,
-            child: SvgPicture.asset('assets/icons/close.svg'),
-          ),
-        ),
-      ],
     );
   }
 }
