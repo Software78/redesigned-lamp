@@ -13,6 +13,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.5.4
+  flutter_svg: ^1.1.5
+  google_fonts: ^3.0.1
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -26,3 +28,4 @@ flutter:
     - assets/
     - assets/icons/
     - assets/images/
+    - assets/illustrations/
