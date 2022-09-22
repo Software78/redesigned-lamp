@@ -20,13 +20,14 @@ class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text,style: GoogleFonts.mulish(
+      text,
+      style: GoogleFonts.mulish(
         textStyle: TextStyle(
           fontSize: fontSize,
           fontWeight: fontWeight,
           color: color,
           fontStyle: fontStyle,
-                  )
+        ),
       ),
     );
   }

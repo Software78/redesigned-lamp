@@ -159,8 +159,11 @@ class DashboardView
                         physics: const ClampingScrollPhysics(),
                         separatorBuilder: (context, index) =>
                             SizedBox(height: 24.h),
-                        itemBuilder: (context, index) => TransactionItem(
-                          transaction: controller.transaction[index],
+                        itemBuilder: (context, index) => GestureDetector(
+                          onTap: () => controller.navigateToDelivery(),
+                          child: TransactionItem(
+                            transaction: controller.transaction[index],
+                          ),
                         ),
                         itemCount: controller.transaction.length,
                       ),

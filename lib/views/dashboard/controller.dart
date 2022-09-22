@@ -1,18 +1,14 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:third_iteration/views/dashboard_delivery/controller.dart';
 import 'package:third_iteration/widgets/custom_text.dart';
 
 import '../../models/transaction_model.dart';
 import '../../mvc/mvc.dart';
 import '../../widgets/dashboard_modal.dart';
 import '../../widgets/transaction_item.dart';
-
-
-
 
 part 'view.dart';
 
@@ -24,7 +20,6 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class DashboardController extends State<DashboardScreen> {
-  
   final List<Transaction> transaction = [
     Transaction(
       truckNumber: "KAN - 345SY",
@@ -114,6 +109,13 @@ class DashboardController extends State<DashboardScreen> {
       isAfexDelivery: true,
     ),
   ];
+
+  navigateToDelivery() {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => const DashboardDeliveryScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
