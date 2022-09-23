@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:third_iteration/widgets/custom_text.dart';
+import 'package:third_iteration/widgets/modals.dart';
 
 import '../../mvc/mvc.dart';
 import '../../widgets/custom_form_field.dart';
@@ -62,8 +63,22 @@ class DashboardDeliveryController extends State<DashboardDeliveryScreen>
     Navigator.pop(context);
   }
 
+
   submit() {
-    if (formKey.currentState!.validate()) {}
+    if (formKey.currentState!.validate()) {
+      showModalBottomSheet(
+        context: context,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(20.r),
+            topLeft: Radius.circular(20.r),
+          ),
+        ),
+        builder: (context) => ConfirmDeliveryModal(
+          
+        ),
+      );
+    }
   }
 
   @override

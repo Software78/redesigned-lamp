@@ -6,11 +6,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_iteration/views/dashboard_delivery/controller.dart';
 import 'package:third_iteration/views/notifications/controller.dart';
 import 'package:third_iteration/widgets/custom_form_field.dart';
+import 'package:third_iteration/widgets/custom_text.dart';
 import 'package:third_iteration/widgets/transaction_item.dart';
 
 import '../../models/transaction_model.dart';
 import '../../mvc/mvc.dart';
-import '../../widgets/dashboard_modal.dart';
+import '../../widgets/modals.dart';
 
 part 'view.dart';
 

@@ -10,6 +10,7 @@ class CustomText extends StatelessWidget {
     this.color,
     this.fontStyle,
     this.textDecoration,
+    this.textAlign,
   });
 
   final String text;
@@ -18,13 +19,16 @@ class CustomText extends StatelessWidget {
   final Color? color;
   final FontStyle? fontStyle;
   final TextDecoration? textDecoration;
+  final TextAlign? textAlign;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
+      textAlign: textAlign ,
       style: GoogleFonts.mulish(
         textStyle: TextStyle(
+        
           fontSize: fontSize,
           fontWeight: fontWeight,
           color: color,
