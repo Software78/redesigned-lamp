@@ -23,23 +23,20 @@ class DashboardView
                 SizedBox(height: 17.h),
                 Column(
                   children: [
-                    GestureDetector(
-                      onTap: () => controller.openDrawer(),
-                      child: Stack(
-                        children: [
-                          Container(
-                            width: 343.w,
-                            height: 89.h,
-                            decoration: BoxDecoration(
-                              color: Color(0xff54565B),
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(16.r),
-                                topLeft: Radius.circular(16.r),
-                              ),
+                    Stack(
+                      children: [
+                        Container(
+                          width: 343.w,
+                          height: 89.h,
+                          decoration: BoxDecoration(
+                            color: Color(0xff54565B),
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(16.r),
+                              topLeft: Radius.circular(16.r),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     Container(
                       width: 342.w,
