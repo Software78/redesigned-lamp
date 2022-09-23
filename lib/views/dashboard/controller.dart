@@ -21,7 +21,10 @@ class DashboardScreen extends StatefulWidget {
   State<DashboardScreen> createState() => DashboardController();
 }
 
-class DashboardController extends State<DashboardScreen> {
+class DashboardController extends State<DashboardScreen>
+    {
+
+
   final List<Transaction> transaction = [
     Transaction(
       truckNumber: "KAN - 345SY",
@@ -112,15 +115,7 @@ class DashboardController extends State<DashboardScreen> {
     ),
   ];
 
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
+  
 
   navigateToDelivery() {
     Navigator.push(
@@ -141,7 +136,7 @@ class DashboardController extends State<DashboardScreen> {
     );
   }
 
-navigateToHistory() {
+  navigateToHistory() {
     print('object');
     Navigator.push(
       context,
@@ -150,7 +145,6 @@ navigateToHistory() {
       ),
     );
   }
-
 
   @override
   Widget build(BuildContext context) {

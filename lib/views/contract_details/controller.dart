@@ -10,6 +10,11 @@ class ContractDetailsScreen extends StatefulWidget {
 }
 
 class ContractDetailsController extends State<ContractDetailsScreen> {
+  pop() {
+    print('object');
+    Navigator.pop(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return ContractDetailsView(this);

@@ -6,6 +6,7 @@
   "ssc": "SSC - Sesame Cleaned Seed",
   "sg": "SG - Sorghum",
   "sb": "SB - Soybean",
+  "maize":"MAIZE",
   "take-log": "Take log of the inventory received",
   "upload-delivery": "Click to upload the delivery note",
   "upload-waybill": "Click to upload the waybill",
@@ -27,5 +28,7 @@
   "delivery-history": "Delivery History",
   "welcome-back":"Welcome Back!",
   "you-have": "You have",
-  "open-deliveries":"oped deliveries"
+  "open-deliveries":"open deliveries",
+  "trucks-delivered":"trucks delivered today",
+  "close":"close"
 }

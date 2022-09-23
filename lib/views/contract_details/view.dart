@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,8 +7,10 @@ import '../../widgets/custom_text.dart';
 import '../../widgets/delivery_item.dart';
 import 'controller.dart';
 
-class ContractDetailsView extends StatelessView<ContractDetailsScreen, ContractDetailsController> {
-  const ContractDetailsView(ContractDetailsController state, {Key? key}) : super(state, key: key);
+class ContractDetailsView
+    extends StatelessView<ContractDetailsScreen, ContractDetailsController> {
+  const ContractDetailsView(ContractDetailsController state, {Key? key})
+      : super(state, key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +23,14 @@ class ContractDetailsView extends StatelessView<ContractDetailsScreen, ContractD
                 padding: REdgeInsets.only(left: 16.r),
                 color: const Color(0xff54565B),
                 width: double.infinity,
-                height: 100,
+                height: 100.h,
                 child: Row(
                   children: [
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        print('object');
+                        controller.pop();
+                      },
                       height: 48.h,
                       minWidth: 48.h,
                       color: const Color(0xffffffff),
@@ -41,7 +44,7 @@ class ContractDetailsView extends StatelessView<ContractDetailsScreen, ContractD
                     Align(
                       alignment: Alignment.center,
                       child: CustomText(
-                        text: "Delivery History",
+                        text: "delivery-history",
                         fontWeight: FontWeight.w600,
                         fontSize: 14.sp,
                         color: Colors.white,
@@ -66,19 +69,19 @@ class ContractDetailsView extends StatelessView<ContractDetailsScreen, ContractD
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomText(
-                  text: "You have ",
+                  text: "you-have",
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xff54565B),
                 ),
                 CustomText(
-                  text: "6",
+                  text: " 6 ",
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xffE1261C),
                 ),
                 CustomText(
-                  text: " trucks delivered today",
+                  text: "trucks-delivered",
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xff54565B),
@@ -90,11 +93,12 @@ class ContractDetailsView extends StatelessView<ContractDetailsScreen, ContractD
             ),
             Expanded(
               child: ListView.separated(
-                  itemBuilder: (context, index) => const DeliveryItem(),
-                  separatorBuilder: (context, index) => SizedBox(
-                        height: 17.h,
-                      ),
-                  itemCount: 10),
+                itemBuilder: (context, index) => const DeliveryItem(),
+                separatorBuilder: (context, index) => SizedBox(
+                  height: 17.h,
+                ),
+                itemCount: 10,
+              ),
             )
           ],
         ),
@@ -108,12 +112,12 @@ class ContractDetailsView extends StatelessView<ContractDetailsScreen, ContractD
               borderRadius: BorderRadius.horizontal(
                   left: Radius.circular(100), right: Radius.circular(100)),
             ),
-            onPressed: () {},
+            onPressed: () => controller.pop(),
             minWidth: 341.67.w,
             height: 56.h,
             color: const Color(0xffE1261C),
             child: CustomText(
-              text: "Close",
+              text: "close",
               color: const Color(0xffF2F2F2),
               fontSize: 16.sp,
               fontWeight: FontWeight.w700,
