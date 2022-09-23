@@ -1,12 +1,15 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:third_iteration/widgets/delivery_item.dart';
+import 'package:third_iteration/views/contract_details/controller.dart';
 
+import '../../mvc/mvc.dart';
 import '../../widgets/custom_text.dart';
+import '../../widgets/delivery_item.dart';
 
-class ContractDetails extends StatelessWidget {
-  const ContractDetails({super.key});
+class ContractDetailsView extends StatelessView<ContractDetailsScreen, ContractDetailsController> {
+  const ContractDetailsView(ContractDetailsController state, {Key? key}) : super(state, key: key);
 
   @override
   Widget build(BuildContext context) {
