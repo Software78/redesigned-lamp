@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:third_iteration/widgets/custom_form_field.dart';
+import 'package:third_iteration/views/direct_delivery/controller.dart';
 
+import '../../mvc/mvc.dart';
+import '../../widgets/custom_form_field.dart';
 import '../../widgets/custom_text.dart';
+import '../dashboard_delivery/controller.dart';
 
-class DirectDelivery extends StatelessWidget {
-  const DirectDelivery({super.key});
+class DirectDeliveryView
+    extends StatelessView<DirectDeliveryScreen, DirectDeliveryController> {
+  const DirectDeliveryView(DirectDeliveryController state, {Key? key})
+      : super(state, key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,38 +87,59 @@ class DirectDelivery extends StatelessWidget {
                       SizedBox(
                         height: 24.h,
                       ),
-                      const CustomFormField(label: "Volume (MT)"),
-                      SizedBox(
-                        height: 32.h,
-                      ),
-                      const CustomFormField(label: "Driver's Name"),
-                      SizedBox(
-                        height: 32.h,
-                      ),
-                      const CustomFormField(label: "Driver's Phone Number"),
-                      SizedBox(
-                        height: 32.h,
-                      ),
-                      const CustomFormField(label: "Truck's Number"),
-                      SizedBox(
-                        height: 32.h,
-                      ),
-                      const CustomFormField(label: "Container's Number"),
-                      SizedBox(
-                        height: 32.h,
-                      ),
-                      const CustomFormField(label: "Volume (MT)"),
-                      SizedBox(
-                        height: 32.h,
-                      ),
-                      const CustomFormField(label: "Bags)"),
-                      SizedBox(
-                        height: 32.h,
-                      ),
-                      const CustomFormField(label: "Bags)"),
-                      SizedBox(
-                        height: 32.h,
-                      ),
+                      Form(
+                          key: controller.formKey,
+                          child: Column(
+                            children: [
+                              const CustomFormField(label: "Volume (MT)"),
+                              SizedBox(
+                                height: 32.h,
+                              ),
+                              const CustomFormField(label: "Driver's Name"),
+                              SizedBox(
+                                height: 32.h,
+                              ),
+                              const CustomFormField(
+                                  label: "Driver's Phone Number"),
+                              SizedBox(
+                                height: 32.h,
+                              ),
+                              const CustomFormField(label: "Truck's Number"),
+                              SizedBox(
+                                height: 32.h,
+                              ),
+                              const CustomFormField(
+                                  label: "Container's Number"),
+                              SizedBox(
+                                height: 32.h,
+                              ),
+                              const CustomFormField(label: "Volume (MT)"),
+                              SizedBox(
+                                height: 32.h,
+                              ),
+                              const CustomFormField(label: "Bags)"),
+                              SizedBox(
+                                height: 32.h,
+                              ),
+                              const CustomFormField(label: "Bags)"),
+                              SizedBox(
+                                height: 32.h,
+                              ),
+                              const UploadWidget(
+                                text: 'Click to upload the delivery note',
+                              ),
+                              SizedBox(
+                                height: 32.h,
+                              ),
+                              const UploadWidget(
+                                text: 'Click to upload the waybill',
+                              ),
+                              SizedBox(
+                                height: 32.h,
+                              ),
+                              const CustomFormField(label: "Comments)"),
+                            ],
+                          )),
                     ],
                   ),
                 ),
