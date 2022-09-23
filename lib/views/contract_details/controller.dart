@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../mvc/mvc.dart';
-import '../../widgets/custom_text.dart';
-import '../../widgets/delivery_item.dart';
-
-
-part 'view.dart';
+import 'view.dart';
 
 class ContractDetailsScreen extends StatefulWidget {
   const ContractDetailsScreen({Key? key}) : super(key: key);
