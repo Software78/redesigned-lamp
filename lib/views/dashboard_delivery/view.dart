@@ -74,7 +74,7 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
                   ),
                   SizedBox(width: 16.w),
                   CustomText(
-                    text: 'Delivery History',
+                    text: 'delivery-history',
                     fontWeight: FontWeight.w700,
                     fontSize: 14.sp,
                     color: Colors.white,
@@ -98,7 +98,7 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
                         fontWeight: FontWeight.w400,
                       ),
                       CustomText(
-                        text: 'Take log of the inventory received',
+                        text: 'take-log',
                         color: const Color(0xff54565B),
                         fontSize: 14.sp,
                         fontStyle: FontStyle.italic,
@@ -117,9 +117,13 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
                     controller: controller.bagController,
                   ),
                   SizedBox(height: 16.h),
-                  const UploadWidget(),
+                  const UploadWidget(
+                    text: 'upload-delivery',
+                  ),
                   SizedBox(height: 16.h),
-                  const UploadWidget(),
+                  const UploadWidget(
+                    text: 'upload-waybill',
+                  ),
                   SizedBox(height: 16.h),
                   CustomFormField(
                     label: 'Comments',
@@ -129,14 +133,14 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
                   Row(
                     children: [
                       CustomText(
-                        text: 'In case of transload, ',
+                        text: 'transload',
                         color: const Color(0xff54565B),
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         fontStyle: FontStyle.italic,
                       ),
                       CustomText(
-                        text: 'Log details',
+                        text: 'log-details',
                         color: const Color(0xffE1261C),
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w700,
@@ -161,7 +165,7 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomText(
-                          text: 'Logistic Company:',
+                          text: 'logistic-company',
                           color: const Color(0xff47494E),
                           fontWeight: FontWeight.w700,
                           fontSize: 12.sp,
@@ -179,7 +183,7 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomText(
-                          text: 'Driver\'s Name:',
+                          text: 'driver-name',
                           color: const Color(0xff47494E),
                           fontWeight: FontWeight.w700,
                           fontSize: 12.sp,
@@ -201,7 +205,7 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           CustomText(
-                            text: 'Weighted Volume\\Bag:',
+                            text: 'weight',
                             color: const Color(0xff47494E),
                             fontWeight: FontWeight.w700,
                             fontSize: 12.sp,
@@ -223,7 +227,7 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           CustomText(
-                            text: 'Driver\'s No:',
+                            text: 'driver-no',
                             color: const Color(0xff47494E),
                             fontWeight: FontWeight.w700,
                             fontSize: 12.sp,
@@ -245,7 +249,7 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           CustomText(
-                            text: 'Truck\'s No:',
+                            text: 'truck-no',
                             color: const Color(0xff47494E),
                             fontWeight: FontWeight.w700,
                             fontSize: 12.sp,
@@ -267,7 +271,7 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           CustomText(
-                            text: 'Container\'s No:',
+                            text: 'container-no',
                             color: const Color(0xff47494E),
                             fontWeight: FontWeight.w700,
                             fontSize: 12.sp,
@@ -293,8 +297,8 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
                         child: Center(
                           child: CustomText(
                             text: controller.animationController.value == 0
-                                ? 'View more'
-                                : 'View less',
+                                ? 'more'
+                                : 'less',
                             color: Colors.white,
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
@@ -314,9 +318,9 @@ class DashboardDeliveryView extends StatelessView<DashboardDeliveryScreen,
 }
 
 class UploadWidget extends StatelessWidget {
-  const UploadWidget({
-    Key? key,
-  }) : super(key: key);
+  const UploadWidget({Key? key, required this.text}) : super(key: key);
+
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -354,7 +358,7 @@ class UploadWidget extends StatelessWidget {
                 ),
                 SizedBox(width: 16.w),
                 CustomText(
-                  text: 'Click to upload the delivery note',
+                  text: text,
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w400,
                 )
