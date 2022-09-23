@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:third_iteration/views/contract_details/controller.dart';
 import 'package:third_iteration/views/dashboard_delivery/controller.dart';
 import 'package:third_iteration/views/notifications/controller.dart';
 import 'package:third_iteration/widgets/custom_form_field.dart';
+import 'package:third_iteration/widgets/custom_text.dart';
 import 'package:third_iteration/widgets/transaction_item.dart';
 
 import '../../models/transaction_model.dart';
@@ -138,6 +140,17 @@ class DashboardController extends State<DashboardScreen> {
       ),
     );
   }
+
+navigateToHistory() {
+    print('object');
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const ContractDetailsScreen(),
+      ),
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {

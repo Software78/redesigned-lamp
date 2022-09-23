@@ -38,7 +38,7 @@ class CommodityCodes extends StatelessWidget {
                   ),
                   SizedBox(width: 13.11.w),
                   CustomText(
-                    text: 'MAZ - Maize',
+                    text: 'maz',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w700,
                     color: const Color(0xff8B908B),
@@ -56,7 +56,7 @@ class CommodityCodes extends StatelessWidget {
                   ),
                   SizedBox(width: 13.11.w),
                   CustomText(
-                    text: 'SSC - Sesame Cleaned Seed',
+                    text: 'ssc',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w700,
                     color: const Color(0xff8B908B),
@@ -74,7 +74,7 @@ class CommodityCodes extends StatelessWidget {
                   ),
                   SizedBox(width: 13.11.w),
                   CustomText(
-                    text: 'SG - Sorghum',
+                    text: 'sg',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w700,
                     color: const Color(0xff8B908B),
@@ -92,7 +92,7 @@ class CommodityCodes extends StatelessWidget {
                   ),
                   SizedBox(width: 13.11.w),
                   CustomText(
-                    text: 'SB - Soybean',
+                    text: 'sb',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w700,
                     color: const Color(0xff8B908B),
@@ -123,8 +123,9 @@ class ConfirmDeliveryModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 380.h,
+      padding: REdgeInsets.symmetric(horizontal: 20.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -153,15 +154,13 @@ class ConfirmDeliveryModal extends StatelessWidget {
           ),
           SizedBox(height: 9.h),
           CustomText(
-            text:
-                'You are accepting this delivery after you have\nlogged the volume and bags received.',
+            text: 'accept-delivery',
             textAlign: TextAlign.center,
             fontSize: 14.sp,
             fontWeight: FontWeight.w400,
           ),
-          SizedBox(height: 24.h),
+          SizedBox(height: 44.h),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               MaterialButton(
                 onPressed: () => Navigator.pop(context),
@@ -174,12 +173,13 @@ class ConfirmDeliveryModal extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100.r),
                 ),
                 child: CustomText(
-                  text: 'Cancel',
+                  text: 'cancel',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xffE1261C),
                 ),
               ),
+              SizedBox(width: 13.w),
               MaterialButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -201,7 +201,7 @@ class ConfirmDeliveryModal extends StatelessWidget {
                 ),
                 color: const Color(0xffE1261C),
                 child: CustomText(
-                  text: 'Proceed',
+                  text: 'proceed',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
@@ -244,19 +244,12 @@ class DeliveryConfirmedModal extends StatelessWidget {
           ),
           SizedBox(height: 14.h),
           CustomText(
-            text: 'Submit?',
+            text: 'delivery-logged',
+            textAlign: TextAlign.center,
             fontSize: 20.sp,
             fontWeight: FontWeight.w700,
           ),
-          SizedBox(height: 9.h),
-          CustomText(
-            text:
-                'You are accepting this delivery after you have\nlogged the volume and bags received.',
-            textAlign: TextAlign.center,
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w400,
-          ),
-          SizedBox(height: 24.h),
+          SizedBox(height: 80.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -269,7 +262,7 @@ class DeliveryConfirmedModal extends StatelessWidget {
                 ),
                 color: const Color(0xffE1261C),
                 child: CustomText(
-                  text: 'Proceed',
+                  text: 'proceed',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,

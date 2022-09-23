@@ -99,8 +99,8 @@ class TransactionItem extends StatelessWidget {
                 children: [
                   CustomText(
                     text: transaction.isAfexDelivery
-                        ? 'AFEX Delivery'
-                        : 'Direct Delivery',
+                        ? 'afex-delivery'
+                        : 'direct-delivery',
                     fontSize: 8.sp,
                     fontWeight: FontWeight.w700,
                     color: transaction.isAfexDelivery

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,17 +26,15 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      textAlign: textAlign ,
+      textAlign: textAlign,
       style: GoogleFonts.mulish(
         textStyle: TextStyle(
-        
-          fontSize: fontSize,
-          fontWeight: fontWeight,
-          color: color,
-          fontStyle: fontStyle,
-          decoration: textDecoration
-        ),
+            fontSize: fontSize,
+            fontWeight: fontWeight,
+            color: color,
+            fontStyle: fontStyle,
+            decoration: textDecoration),
       ),
-    );
+    ).tr();
   }
 }

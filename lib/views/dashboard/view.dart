@@ -35,6 +35,57 @@ class DashboardView
                               topLeft: Radius.circular(16.r),
                             ),
                           ),
+                          padding: REdgeInsets.all(16.r),
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 45.w,
+                                height: 45.w,
+                                padding: REdgeInsets.all(2.r),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(8.r),
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.r),
+                                  child:
+                                      Image.asset('assets/images/adamu.jpeg'),
+                                ),
+                              ),
+                              SizedBox(width: 8.w),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Spacer(),
+                                  CustomText(
+                                    text: 'welcome-back',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.white,
+                                  ),
+                                  CustomText(
+                                    text: 'Adamu Adamu 👋🏼',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
+                                  Spacer()
+                                ],
+                              ),
+                              Spacer(),
+                              Column(
+                                children: [
+                                  GestureDetector(
+                                    onTap: () =>
+                                        controller.navigateToNotification(),
+                                    child: SvgPicture.asset(
+                                        'assets/icons/notification.svg'),
+                                  ),
+                                  Spacer(),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     ),
